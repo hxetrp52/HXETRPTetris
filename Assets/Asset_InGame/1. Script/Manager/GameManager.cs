@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-10)]
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance = null;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
+
     private void Awake()
     {
         if (instance == null)

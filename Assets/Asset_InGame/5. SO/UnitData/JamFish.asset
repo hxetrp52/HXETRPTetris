@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfc5f71e1f36d54db809f1694ef246d, type: 3}
+  m_Name: JamFish
+  m_EditorClassIdentifier: 
+  unitName: "\uC7BC\uD53C\uC26C"
+  maxHP: 30
+  currentHP: 20
+  moveSpeed: 2
+  dropEXP: 200
+  unitSprite: {fileID: -3127052182008990940, guid: fd94ca8bd23284643b34c5e10e1d726c, type: 3}
+  unitMaterial: {fileID: 2100000, guid: e9ddad76236bac24f89da42195e52f8a, type: 2}
