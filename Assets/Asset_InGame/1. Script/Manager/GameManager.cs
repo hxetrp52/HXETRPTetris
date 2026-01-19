@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[DefaultExecutionOrder(-10)]
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance = null;
@@ -47,12 +46,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void AddManagers() // 매니저 추가
+    private void AddManagers() // 매니저 추가 + for문 사용해서 순서대로 넣기 가! 능!
     {
-        foreach (var manager in managers) 
+        for (int i = 0; i < managers.Count; i++)
         {
-            managerContainer.Add(manager.GetType(), manager);
-            manager.Init();
+            managerContainer.Add(managers[i].GetType(), managers[i]);
+            managers[i].Init();
         }
     }
 

@@ -7,11 +7,11 @@ public class AudioManager : ManagerBase
 
     public override void Init()
     {
-        Debug.Log("사운드 시작 재생 뿌슝빠슝!!!");
+
     }
 
     public override void ManagerUpdate()
     {
-        Debug.Log("사운드 연속 재생 뿌슝빠슝!!!");
+
     }
 }

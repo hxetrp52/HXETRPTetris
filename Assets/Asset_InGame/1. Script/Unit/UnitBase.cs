@@ -10,10 +10,10 @@ public abstract class UnitBase : MonoBehaviour
     private float moveSpeed;
     private float dropEXP;
     private Sprite unitSprite;
-    [SerializeField] private Material unitMaterial;
+    private Material unitMaterial;
     #endregion 
 
-    [SerializeField] private UnitData unitData;
+    public UnitData unitData;
 
     [SerializeField] private ParticleSystem ps;
     public void InitUnitData(UnitData data)
@@ -28,12 +28,19 @@ public abstract class UnitBase : MonoBehaviour
         unitSprite = data.unitSprite;
         unitMaterial = data.unitMaterial;
     }
-    
+
+
     public void SpawnUnit(UnitData data)
     {
-        
+        InitUnitData(data);
+        SetParticleMaterial(unitMaterial);
     }
 
+    public void SetParticleMaterial(Material mat)
+    {
+        var renderer = ps.GetComponent<ParticleSystemRenderer>();
+        renderer.material = mat;
+    }
     public void TakeHelth(float helth)
     {
         currentHP += helth;

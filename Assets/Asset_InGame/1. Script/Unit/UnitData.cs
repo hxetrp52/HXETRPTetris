@@ -13,5 +13,5 @@ public class UnitData : ScriptableObject
     public Sprite unitSprite;
     public Material unitMaterial;
 
-
+    
 }
