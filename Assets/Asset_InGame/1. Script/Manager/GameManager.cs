@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (var manager in managerContainer.Values)
         {
-            manager.ManagerUpdate();
+            manager.ManagerUpdate(); // 매니저에서 생명주기 함수 호출 비용 알뜰살뜰하게 절약하기 위해 상위 매니저에서 관리
         }
     }
 

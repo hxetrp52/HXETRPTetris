@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class UnitBase : MonoBehaviour
@@ -9,12 +10,11 @@ public abstract class UnitBase : MonoBehaviour
     private float currentHP;
     private float moveSpeed;
     private float dropEXP;
-    private Sprite unitSprite;
     #endregion 
 
     public UnitData unitData;
+    public UnitRenderer unitRenderer;
 
-    [SerializeField] private ParticleSystem ps;
     public void InitUnitData(UnitData data)
     {
         unitData = data;
@@ -24,27 +24,17 @@ public abstract class UnitBase : MonoBehaviour
         currentHP = data.currentHP;
         moveSpeed = data.moveSpeed;
         dropEXP = data.dropEXP;
-        unitSprite = data.unitSprite;
+
+        unitRenderer.InitAnimationData(data);
     } // SO로부터 데이터 가져오기
 
 
     public void SpawnUnit(UnitData data) // 유닛 생성 시 호출하는 함수
     {
         InitUnitData(data);
-        SetParticleMaterial(unitData);
+        unitRenderer.SetAnimation(0);
     }
 
-    public void SetParticleMaterial(UnitData data) // 파티클 시스템 머테리얼 변경 및 나중에 애니메이션 시트 분리하는 것 까지 담당?
-    {
-        // 머테리얼 적용
-        var renderer = ps.GetComponent<ParticleSystemRenderer>();
-        renderer.material = data.unitMaterial;
-
-        // 애니메이션 시트 적용
-        var sheet = ps.textureSheetAnimation;
-        sheet.numTilesX = data.animationSheetSizeX;
-        sheet.numTilesY = data.animationSheetSizeY;
-    }
     public void TakeHelth(float helth)
     {
         currentHP += helth;

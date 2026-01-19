@@ -17,7 +17,14 @@ MonoBehaviour:
   currentHP: 20
   moveSpeed: 2
   dropEXP: 200
-  unitSprite: {fileID: -3127052182008990940, guid: fd94ca8bd23284643b34c5e10e1d726c, type: 3}
-  unitMaterial: {fileID: 2100000, guid: 3afa4d0ee9bfb68458f80b2395b929e6, type: 2}
-  animationSheetSizeX: 12
-  animationSheetSizeY: 1
+  animatiomDatas:
+  - animationName: Run
+    animationMaterial: {fileID: 2100000, guid: 3afa4d0ee9bfb68458f80b2395b929e6, type: 2}
+    animationSheetSizeX: 12
+    animationSheetSizeY: 1
+    animationDataFps: 24
+  - animationName: Hit
+    animationMaterial: {fileID: 2100000, guid: 243d15b2b10a2d14fae69b7b0ffda54e, type: 2}
+    animationSheetSizeX: 5
+    animationSheetSizeY: 1
+    animationDataFps: 10

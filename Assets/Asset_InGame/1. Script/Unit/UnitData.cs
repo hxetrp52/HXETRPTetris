@@ -10,10 +10,16 @@ public class UnitData : ScriptableObject
 
     public float dropEXP;
 
-    public Sprite unitSprite;
-    public Material unitMaterial;
-
-    public int animationSheetSizeX;
-    public int animationSheetSizeY;
     
+    public AnimatiomData[] animatiomDatas;
+
+    [System.Serializable] 
+    public struct AnimatiomData
+    {
+        public string animationName;
+        public Material animationMaterial;
+        public int animationSheetSizeX;
+        public int animationSheetSizeY;
+        public int animationDataFps;
+    }
 }
