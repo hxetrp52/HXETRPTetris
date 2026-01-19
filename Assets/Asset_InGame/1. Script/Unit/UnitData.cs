@@ -13,5 +13,7 @@ public class UnitData : ScriptableObject
     public Sprite unitSprite;
     public Material unitMaterial;
 
+    public int animationSheetSizeX;
+    public int animationSheetSizeY;
     
 }
