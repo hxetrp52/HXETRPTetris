@@ -12,16 +12,16 @@ public abstract class UnitBase : MonoBehaviour
     private float dropEXP;
     #endregion 
 
-    public UnitData unitData;
+    [SerializeField] protected UnitData unitData;
     public UnitRenderer unitRenderer;
 
-    public void InitUnitData(UnitData data)
+    public virtual void InitUnitData(UnitData data)
     {
         unitData = data;
 
         unitName = data.unitName;
         maxHP = data.maxHP;
-        currentHP = data.currentHP;
+        currentHP = maxHP;
         moveSpeed = data.moveSpeed;
         dropEXP = data.dropEXP;
 
@@ -29,13 +29,13 @@ public abstract class UnitBase : MonoBehaviour
     } // SO로부터 데이터 가져오기
 
 
-    public void SpawnUnit(UnitData data) // 유닛 생성 시 호출하는 함수
+    public virtual void SpawnUnit(UnitData data) // 유닛 생성 시 호출하는 함수
     {
         InitUnitData(data);
         unitRenderer.SetAnimation(0);
     }
 
-    public void TakeHelth(float helth)
+    public virtual void TakeHelth(float helth)
     {
         currentHP += helth;
         if (currentHP > maxHP)
@@ -44,7 +44,7 @@ public abstract class UnitBase : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         currentHP -= MathF.Abs(damage);
         if (currentHP <= 0)
@@ -52,8 +52,5 @@ public abstract class UnitBase : MonoBehaviour
             Death();
         }
     }
-    public void Death() 
-    {
-        // 사망 시 호출할 코드 플레이어면 게임 오버고 적이면 오브젝트 풀에 반환할 예정
-    }
+    public abstract void Death();
 }

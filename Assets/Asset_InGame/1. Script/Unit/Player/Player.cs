@@ -1,15 +1,19 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : UnitBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private PlayerMovement playerMovement;
+
+    private void Start()
     {
+        SpawnUnit(unitData);
         
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+
+    public override void Death()
     {
         
     }

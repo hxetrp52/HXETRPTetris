@@ -37,16 +37,6 @@ public class UnitRenderer : MonoBehaviour
 
     }
 
-
-    public void PlayHitAnimation()
-    {
-        aniamationContainer.TryGetValue(1, out var animationData);
-        LoadAnimationData(animationData);
-
-
-        // 여기서 지정한 fps가 지난 후 다시 원래 애니메이션으로 돌아가는 코드가 있어야함 
-    }
-
     private void LoadAnimationData(UnitData.AnimatiomData animationData)
     {
         psRenderer.material = animationData.animationMaterial;
@@ -54,5 +44,13 @@ public class UnitRenderer : MonoBehaviour
         textureSheet.numTilesX = animationData.animationSheetSizeX;
         textureSheet.numTilesY = animationData.animationSheetSizeY;
         textureSheet.fps = animationData.animationDataFps;
+    }
+
+    public float GetFrameDuration()
+    {
+        float animationSheetSize = textureSheet.numTilesX * textureSheet.numTilesY;
+        float Fps = textureSheet.fps;
+
+        return animationSheetSize / Fps;
     }
 }

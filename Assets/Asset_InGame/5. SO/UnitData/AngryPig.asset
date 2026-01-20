@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfc5f71e1f36d54db809f1694ef246d, type: 3}
+  m_Name: AngryPig
+  m_EditorClassIdentifier: 
+  unitName: "\uC7BC\uD53C\uC26C"
+  maxHP: 30
+  currentHP: 20
+  moveSpeed: 2
+  dropEXP: 200
+  animatiomDatas:
+  - animationName: Run
+    animationMaterial: {fileID: 2100000, guid: 3afa4d0ee9bfb68458f80b2395b929e6, type: 2}
+    animationSheetSizeX: 12
+    animationSheetSizeY: 1
+    animationDataFps: 24
+  - animationName: Hit
+    animationMaterial: {fileID: 2100000, guid: 243d15b2b10a2d14fae69b7b0ffda54e, type: 2}
+    animationSheetSizeX: 5
+    animationSheetSizeY: 1
+    animationDataFps: 15

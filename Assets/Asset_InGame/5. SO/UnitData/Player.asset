@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dfc5f71e1f36d54db809f1694ef246d, type: 3}
-  m_Name: JamFish
+  m_Name: Player
   m_EditorClassIdentifier: 
-  unitName: "\uC7BC\uD53C\uC26C"
-  maxHP: 30
-  currentHP: 20
+  unitName: "\uD50C\uB808\uC774\uC5B4"
+  maxHP: 100
   moveSpeed: 2
-  dropEXP: 200
+  dropEXP: 0
   animatiomDatas:
   - animationName: Run
-    animationMaterial: {fileID: 2100000, guid: 3afa4d0ee9bfb68458f80b2395b929e6, type: 2}
+    animationMaterial: {fileID: 2100000, guid: 63048d7d11357db45b536138ff16c9f2, type: 2}
     animationSheetSizeX: 12
     animationSheetSizeY: 1
     animationDataFps: 24
-  - animationName: Hit
-    animationMaterial: {fileID: 2100000, guid: 243d15b2b10a2d14fae69b7b0ffda54e, type: 2}
-    animationSheetSizeX: 5
+  - animationName: Idle
+    animationMaterial: {fileID: 2100000, guid: cfae30fe33875c24e9db6161234a29e8, type: 2}
+    animationSheetSizeX: 11
     animationSheetSizeY: 1
-    animationDataFps: 10
+    animationDataFps: 22

@@ -11,4 +11,9 @@
     {
         
     }
+
+    public override void Death()
+    {
+        
+    }
 }
