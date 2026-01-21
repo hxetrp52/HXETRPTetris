@@ -1,19 +1,31 @@
 ﻿using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : PlayerComponent
 {
     [SerializeField] public float speed = 3;
     [SerializeField] private Rigidbody2D rb;
 
+    private Player player;
+
     private float x;
     private float y;
     private Vector2 moveVector = Vector2.zero;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private int lastAnimationID = -1;
+
+    public override void Init(Player player)
+    {
+        this.player = player;
+    }
+
+    public override void ComponentUpdate()
+    {
+        ControlAnimation();
+    }
 
     private void FixedUpdate()
     {
         Move();
-        ControlAnimation();
     }
 
     private void Move()
@@ -27,13 +39,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void ControlAnimation()
     {
-        if (x < 0)
+        if (x < 0) gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        else if (x > 0) gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+        int nextID = (moveVector == Vector2.zero) ? 1 : 0; 
+
+        if (nextID != lastAnimationID)
         {
-            gameObject.transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else if (x > 0)
-        {
-            gameObject.transform.localScale = new Vector3(1, 1, 1);
+            player.playerRenderer.SetAnimation(nextID);
+            lastAnimationID = nextID; // 현재 ID 갱신
         }
     }
 }

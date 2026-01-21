@@ -9,6 +9,7 @@ public class UnitRenderer : MonoBehaviour
     private ParticleSystemRenderer psRenderer;
     private ParticleSystem.TextureSheetAnimationModule textureSheet;
     private Coroutine hitAnimRoutine;
+    public bool IsPlayingOneShot => hitAnimRoutine != null;
 
     private int currentAnimationID;
 
@@ -30,27 +31,54 @@ public class UnitRenderer : MonoBehaviour
 
     public void SetAnimation(int animationID) // 파티클 시스템 머테리얼 변경 및 나중에 애니메이션 시트 분리하는 것 까지 담당?
     {
+
         aniamationContainer.TryGetValue(animationID, out var animationData);
 
         LoadAnimationData(animationData);
         currentAnimationID = animationID;
 
     }
+    public void PlayAnimationOneShot(int animationID)
+    {
+        if (hitAnimRoutine != null)
+        {
+            StopCoroutine(hitAnimRoutine);
+        }
+
+        hitAnimRoutine = StartCoroutine(CoPlayOneShot(animationID));
+    }
+
+    // 원샷 처리를 위한 코루틴
+    private IEnumerator CoPlayOneShot(int targetID)
+    {
+        if (aniamationContainer.TryGetValue(targetID, out var data))
+        {
+            LoadAnimationData(data);
+
+            yield return new WaitForSeconds(data.animationDataDuration - 0.02f);
+
+            hitAnimRoutine = null;
+
+            SetAnimation(currentAnimationID);
+        }
+
+        hitAnimRoutine = null;
+    }
 
     private void LoadAnimationData(UnitData.AnimatiomData animationData)
     {
+        ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+
         psRenderer.material = animationData.animationMaterial;
 
         textureSheet.numTilesX = animationData.animationSheetSizeX;
         textureSheet.numTilesY = animationData.animationSheetSizeY;
-        textureSheet.fps = animationData.animationDataFps;
-    }
 
-    public float GetFrameDuration()
-    {
-        float animationSheetSize = textureSheet.numTilesX * textureSheet.numTilesY;
-        float Fps = textureSheet.fps;
+        var main = ps.main;
+        main.duration = animationData.animationDataDuration;
+        main.startLifetime = animationData.animationDataDuration;
+        main.loop = animationData.isLoop;
 
-        return animationSheetSize / Fps;
+        ps.Play();
     }
 }

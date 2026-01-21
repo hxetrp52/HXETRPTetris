@@ -21,9 +21,17 @@ MonoBehaviour:
     animationMaterial: {fileID: 2100000, guid: 63048d7d11357db45b536138ff16c9f2, type: 2}
     animationSheetSizeX: 12
     animationSheetSizeY: 1
-    animationDataFps: 24
+    animationDataDuration: 1
+    isLoop: 1
   - animationName: Idle
     animationMaterial: {fileID: 2100000, guid: cfae30fe33875c24e9db6161234a29e8, type: 2}
     animationSheetSizeX: 11
     animationSheetSizeY: 1
-    animationDataFps: 22
+    animationDataDuration: 1
+    isLoop: 1
+  - animationName: Hit
+    animationMaterial: {fileID: 2100000, guid: 00ef78cb993283f43a7a552378f6cfcb, type: 2}
+    animationSheetSizeX: 7
+    animationSheetSizeY: 1
+    animationDataDuration: 0.25
+    isLoop: 0

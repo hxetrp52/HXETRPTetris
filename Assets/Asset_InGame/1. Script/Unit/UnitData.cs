@@ -19,6 +19,7 @@ public class UnitData : ScriptableObject
         public Material animationMaterial;
         public int animationSheetSizeX;
         public int animationSheetSizeY;
-        public int animationDataFps;
+        public float animationDataDuration;
+        public bool isLoop;
     }
 }
