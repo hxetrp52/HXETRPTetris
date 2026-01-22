@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: UnIt
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: UnIt
   m_GUID: 117d58f5f02686e4a9f450a50ec9c374
   m_SerializeEntries:
   - m_GUID: 3296940b29d6dc54fa4e774533646978
@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 735575ea43f933e41afbc6d1acd03140
+    m_Address: Unit_Enemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 07cfe731eb4f6844a901a3ff792ad483, type: 2}

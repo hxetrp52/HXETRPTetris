@@ -5,11 +5,11 @@ using UnityEngine;
 public abstract class UnitBase : MonoBehaviour
 {
     #region 유닛 데이터 정보
-    private string unitName;
-    private float maxHP;
-    private float currentHP;
-    private float moveSpeed;
-    private float dropEXP;
+    protected string unitName;
+    protected float maxHP;
+    protected float currentHP;
+    protected float moveSpeed;
+    protected float dropEXP;
     #endregion 
 
     [SerializeField] protected UnitData unitData;

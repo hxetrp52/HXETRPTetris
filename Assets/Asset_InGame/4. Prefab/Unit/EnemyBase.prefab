@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2088621445359892227}
   - component: {fileID: 2101046720069176126}
   - component: {fileID: 5593233434630764539}
+  - component: {fileID: 7254109494062174973}
   m_Layer: 0
   m_Name: EnemyBase
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +51,7 @@ MonoBehaviour:
   unitData: {fileID: 11400000, guid: c7dc2eedff355fa4a8e5b2b114c31b21, type: 2}
   unitRenderer: {fileID: 2088621445359892227}
   enemyRender: {fileID: 2088621445359892227}
+  enemyMovement: {fileID: 7254109494062174973}
 --- !u!114 &2088621445359892227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4921,3 +4923,15 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &7254109494062174973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089400390012023137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f3ebad000447b4a98a3da7dd534d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

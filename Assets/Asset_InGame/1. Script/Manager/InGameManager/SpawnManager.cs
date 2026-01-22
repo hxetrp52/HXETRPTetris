@@ -1,10 +1,12 @@
-﻿using UnityEngine;
-using AddressableKeys;
+﻿using AddressableKeys;
+using UnityEngine;
 
 public class SpawnManager : InGameManagerBase
 {
     private Player player;
     private AddressableLoadManager loadManager;
+    public UnitData testData;
+    public int EnemyCount;
 
     public override void Init()
     {
@@ -19,12 +21,21 @@ public class SpawnManager : InGameManagerBase
 
     public void SpawnPlayer()
     {
-        loadManager.InstantiatePrefab(UnitKey.PLAYER, this.transform , Player =>
+        loadManager.InstantiatePrefab(UnitKey.PLAYER, transform, go =>
         {
-            player = Player.GetComponent<Player>();
+            player = go.GetComponent<Player>();
             player.transform.SetParent(null);
+
         });
     }
 
-    
+    public void SpawnEnemy()
+    {
+        loadManager.InstantiatePrefab(UnitKey.ENEMY, transform, go =>
+        {
+            var enemy = go.GetComponent<Enemy>();
+            enemy.SpawnUnit(testData);
+            enemy.InitEnemy(player);
+        });
+    }
 }

@@ -18,10 +18,6 @@ public class Player : UnitBase
     private void Update()
     {
         UpdatePlayerComponent();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(0);
-        }
     }
     
     private void InitializePlayerComponent()
