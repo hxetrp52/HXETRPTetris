@@ -9,7 +9,6 @@ public class UnitRenderer : MonoBehaviour
     private ParticleSystemRenderer psRenderer;
     private ParticleSystem.TextureSheetAnimationModule textureSheet;
     private Coroutine hitAnimRoutine;
-    public bool IsPlayingOneShot => hitAnimRoutine != null;
 
     private int currentAnimationID;
 

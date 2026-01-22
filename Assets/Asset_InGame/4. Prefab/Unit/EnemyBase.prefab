@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2101046720069176126}
   - component: {fileID: 5593233434630764539}
   m_Layer: 0
-  m_Name: TestUnit
+  m_Name: EnemyBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitData: {fileID: 11400000, guid: c7dc2eedff355fa4a8e5b2b114c31b21, type: 2}
   unitRenderer: {fileID: 2088621445359892227}
+  enemyRender: {fileID: 2088621445359892227}
 --- !u!114 &2088621445359892227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1534,7 +1535,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     mode: 0
-    timeMode: 2
+    timeMode: 0
     fps: 30
     frameOverTime:
       serializedVersion: 2

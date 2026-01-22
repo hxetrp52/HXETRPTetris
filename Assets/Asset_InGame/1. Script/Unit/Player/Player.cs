@@ -4,33 +4,34 @@ using UnityEngine;
 
 public class Player : UnitBase
 {
-    public UnitRenderer playerRenderer;
+    [HideInInspector] public UnitRenderer playerRenderer;
 
-    public PlayerComponent[] playerComponents;
     private Dictionary<Type, PlayerComponent> componentContainer = new Dictionary<Type, PlayerComponent>();
 
     private void Awake()
     {
         SpawnUnit(unitData);
         InitializePlayerComponent();
+        playerRenderer = unitRenderer;
     }
 
     private void Update()
     {
         UpdatePlayerComponent();
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerRenderer.PlayAnimationOneShot(2);
+            TakeDamage(0);
         }
     }
-
+    
     private void InitializePlayerComponent()
     {
-        for (int i = 0; i < playerComponents.Length; i++)
+        var components = GetComponentsInChildren<PlayerComponent>();
+
+        foreach (var component in components)
         {
-            componentContainer.Add(playerComponents[i].GetType(), playerComponents[i]);
-            playerComponents[i].Init(this);
+            component.Init(this);
+            componentContainer.Add(component.GetType(), component);
         }
     }
 
@@ -48,6 +49,13 @@ public class Player : UnitBase
             return (T)comp;
 
         return default;
+    }
+
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        playerRenderer.PlayAnimationOneShot(2);
     }
 
     public override void Death()

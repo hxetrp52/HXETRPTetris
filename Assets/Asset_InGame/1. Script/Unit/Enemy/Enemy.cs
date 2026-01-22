@@ -1,15 +1,16 @@
-﻿    public class Enemy : UnitBase
+﻿public class Enemy : UnitBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public UnitRenderer enemyRender;
+
+    private void Awake()
     {
-        
+        enemyRender = unitRenderer;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void TakeDamage(float damage)
     {
-        
+        base.TakeDamage(damage);
+        enemyRender.PlayAnimationOneShot(1);
     }
 
     public override void Death()

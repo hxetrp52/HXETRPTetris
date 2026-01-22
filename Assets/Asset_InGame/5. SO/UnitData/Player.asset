@@ -18,20 +18,20 @@ MonoBehaviour:
   dropEXP: 0
   animatiomDatas:
   - animationName: Run
-    animationMaterial: {fileID: 2100000, guid: 63048d7d11357db45b536138ff16c9f2, type: 2}
-    animationSheetSizeX: 12
+    animationMaterial: {fileID: 2100000, guid: d5ce8f67a7a3d2d4c9c3ae2cede8e6fa, type: 2}
+    animationSheetSizeX: 6
     animationSheetSizeY: 1
-    animationDataDuration: 1
+    animationDataDuration: 0.5
     isLoop: 1
   - animationName: Idle
-    animationMaterial: {fileID: 2100000, guid: cfae30fe33875c24e9db6161234a29e8, type: 2}
-    animationSheetSizeX: 11
+    animationMaterial: {fileID: 2100000, guid: 9157cd6d21552e246b2a9e9047a468cc, type: 2}
+    animationSheetSizeX: 2
     animationSheetSizeY: 1
-    animationDataDuration: 1
+    animationDataDuration: 0.5
     isLoop: 1
   - animationName: Hit
-    animationMaterial: {fileID: 2100000, guid: 00ef78cb993283f43a7a552378f6cfcb, type: 2}
-    animationSheetSizeX: 7
+    animationMaterial: {fileID: 2100000, guid: e33eee96a5365f7419aa09710fa96ff0, type: 2}
+    animationSheetSizeX: 2
     animationSheetSizeY: 1
     animationDataDuration: 0.25
     isLoop: 0
