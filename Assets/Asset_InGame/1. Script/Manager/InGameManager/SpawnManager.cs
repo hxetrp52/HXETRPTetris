@@ -1,4 +1,5 @@
 ﻿using AddressableKeys;
+using TMPro;
 using UnityEngine;
 
 public class SpawnManager : InGameManagerBase
@@ -7,11 +8,22 @@ public class SpawnManager : InGameManagerBase
     private AddressableLoadManager loadManager;
     public UnitData testData;
     public int EnemyCount;
+    public TMP_Text text;
 
     public override void Init()
     {
         loadManager = GameManager.Instance.GetManager<AddressableLoadManager>();
         SpawnPlayer();
+    }
+
+    public void TestEnemySpawn()
+    {
+        for (int i = 0; i < 1000; i++)
+        {
+            SpawnEnemy();
+        }
+        EnemyCount += 1000;
+        text.text = $"Counter : {EnemyCount.ToString()}";
     }
 
     public override void ManagerUpdate()

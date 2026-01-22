@@ -5,6 +5,8 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
     private float moveSpeed;
 
+    
+
     public void Init(Transform target, float speed)
     {
         this.target = target;
@@ -17,5 +19,18 @@ public class EnemyMovement : MonoBehaviour
 
         Vector2 dir = (target.position - transform.position).normalized;
         transform.position += (Vector3)(dir * moveSpeed * Time.deltaTime);
+        FlipAnimation();
+    }
+
+    private void FlipAnimation()
+    {
+        if (target.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 }

@@ -35,3 +35,9 @@ MonoBehaviour:
     animationSheetSizeY: 1
     animationDataDuration: 0.25
     isLoop: 0
+  - animationName: Rolling
+    animationMaterial: {fileID: 2100000, guid: e98475a82c5e32d42b3684ac7b7e3a03, type: 2}
+    animationSheetSizeX: 4
+    animationSheetSizeY: 1
+    animationDataDuration: 0.3
+    isLoop: 0
